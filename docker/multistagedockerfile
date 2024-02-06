@@ -1,0 +1,7 @@
+FROM maven:latest as bobthebuilder
+COPY student-ui /student-ui
+WORKDIR /student-ui
+RUN mvn clean package
+
+FROM tomcat:8.5.93-jre11-temurin-focal
+COPY --from=bobthebuilder /student-ui/target/*.war webapps/student.war
