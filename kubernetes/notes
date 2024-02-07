@@ -1,0 +1,46 @@
+
+
+1. manifest -> declerative -> reference -> detail configuretion 
+2. imperative  -> commands -> no reference -> 
+
+
+ kubectl create deployment my-ngin --image=nginx --replicas=5 --dry-run=client -o yaml > my-nginx.yaml
+ kubectl create deployment my-ngin --image=nginx --replicas=5 -o yaml > my-nginx.yaml
+ kubectl create deployment my-ngin --image=nginx --replicas=5 
+ 
+ kubectl create configmap nginx-config --from-file=index.html
+ 
+ 
+ apiVersion: v1
+data:
+  index.html: "<h1>\n\thello world this is cdec online batch we are learing kubernetes
+    \n</h1>\n"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: nginx-config
+  
+  kubectl create configmap nginx-config --from-file=index.html --dry-run=client -o yaml > nginx-config.yaml
+  
+  
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx 
+      volumeMounts:
+      - name: nginx-config
+        mountPath: /usr/share/nginx/html/
+  volumes:
+    - name: nginx-config
+      configMap:
+        name: nginx-config
+		
+		
+
+
+kubectl exec -it $(podname) any command want to execute in container
+		
