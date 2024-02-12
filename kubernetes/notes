@@ -43,4 +43,24 @@ spec:
 
 
 kubectl exec -it $(podname) any command want to execute in container
-		
+
+Kubectl describe secret -> 
+
+kubectl describe configmap -> 
+kubectl create secret generic name --from-file=fil
+kubectl get secret 
+kubectl describe secret
+
+NAMESPACE
+
+kubectl get namespace
+kubectl create namespace dev
+kubectl config set-context --current --namespace=NAMESPACE
+kubens -> install 
+
+kubens dev -> to change namespace
+kubens -> to get namespace 
+
+difference between secret and configmap 
+difference between deployment and stateful set 
+difference between  daemonset and deployment and  stateful set 
