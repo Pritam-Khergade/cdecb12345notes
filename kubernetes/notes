@@ -110,3 +110,25 @@ https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html
 https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html
 
 https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html
+
+
+
+
+ingress-> 
+
+ nginx ingress- - nlb  -> 30-45 , 
+ 
+ helm install 
+ https://helm.sh/docs/intro/install/
+ 
+ $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+$ chmod 700 get_helm.sh
+$ ./get_helm.sh
+
+helm install my-release oci://registry-1.docker.io/bitnamicharts/nginx-ingress-controller
+
+
+ 
+ 
+ 
+ AWS loadbalancer ingress -  alb/nlb 
