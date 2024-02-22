@@ -1,0 +1,38 @@
+
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+                git'https://github.com/Pritam-Khergade/student-ui.git'
+            }
+        }
+		stage('install docker') {
+            steps {
+                sh'''
+				sudo yum install -y docker
+				sudo systemctl start docker 
+				sudo systemctl enable docker 
+				'''
+            }
+        }
+		stage('docker build') {
+            steps {
+                sh '''
+				 sudo  docker build -t cdecdemodocker .
+				'''
+            }
+        }
+		stage('docker push ') {
+            steps {
+                sh '''
+				  aws ecr get-login-password --region us-east-2 | sudo docker login --username AWS --password-stdin 654654222795.dkr.ecr.us-east-2.amazonaws.com
+  sudo docker tag cdecdemodocker:latest 654654222795.dkr.ecr.us-east-2.amazonaws.com/cdecdemodocker:latest
+ sudo  docker push 654654222795.dkr.ecr.us-east-2.amazonaws.com/cdecdemodocker:latest
+				'''
+            }
+        }
+		
+    }
+}
