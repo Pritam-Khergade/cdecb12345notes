@@ -2,10 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('checkout') {
             steps {
-                echo 'Hello World form cdec'
+                git 'https://github.com/Pritam-Khergade/student-ui.git'
             }
         }
+        stage('build') {
+            steps {
+                sh ''' apt install maven -y 
+ mvn clean package'''
+            }
     }
 }
