@@ -9,7 +9,14 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'mvn clean install'
+                sh '''mvn clean install
+                mv target/studentapp-2.2-SNAPSHOT.war studentapp-2.2-SNAPSHOT-${BUILD_TIMESTAMP}.war
+                '''
+            }
+        }
+         stage('artifact push') {
+            steps {
+                sh 'aws s3 cp studentapp-2.2-SNAPSHOT-${BUILD_TIMESTAMP}.war s3://student-artifact-cdec'
             }
         }
     }
