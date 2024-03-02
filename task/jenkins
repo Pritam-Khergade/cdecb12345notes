@@ -1,0 +1,76 @@
+task
+
+use any application
+
+create jenkins pipeline for ci which includes thses stages
+-- git checkout
+-- git scan for credentials git leaks
+-- workspace clean includes docker volume, images
+-- maven build
+-- sonarqube code coverage
+-- store artifacts in s3 bucket/nexus
+-- build docker image
+-- docker image scan(any tool)
+-- push image into ecr(build_timestamp)
+
+
+
+use jenkins inside a container
+stages
+-- git checkout
+-- docker build
+-- docker push
+
+
+build a jenkins pipeline which should ask the approval before docker push 
+
+
+use standard pipeline
+integrate sonarqube with jenkins(use any application)
+
+
+create k8s cluster using pipeline
+
+
+create a jenkins pipeline which should  send alerts on email once the docker push stages completed
+
+ 
+create a jenkins pipeline which should ask the  approval on email before docker push
+
+
+ :-create a jenkins pipeline and run a standard pipeline using the agent on ec2 via ssh method  
+:- create a jenkins pipeline and run a standard pipeline using athe agent docker 
+:- create a jenkins pipeline and run a standard pipeline using athe agent ecs
+:- host a jenkins inside a k8s cluster and run a standard pipeline and jenkins  should  have  persistent volume
+
+ :- create a jenkins pipeline to deploy on ec2 instance maven artifect(student  war)
+ :- create  a jenkins pipeline to deploy a docker img  on ec2 inst. (tomcat img )
+ :- create  a jenkins pipeline to deploy tomcat img in k8s cluster 
+ :- create  a jenkins pipeline in which we have to enable and implement webhook along with cron jobs
+ 
+ :- implement jenkins agent on cloud ec2 (launch agent on demand) 
+
+:- create  a jenkins pipeline and variablize the ecr repo for exa. stage and prod
+
+ :- create  a jenkins pipeline to promote the img  from stage ecr to prod ecr  
+
+:- create  a jenkins pipeline in which we have to implement auto increament the version of docker img for exa. 0.0.1 to  0.0.2
+
+:- create  2 jenkins pipelines and implement once the first  pipeline completed then second should triggered automatically
+
+ :- create roleback authentication system in jenkins
+
+ :- implement jenkins backup for all the pipeline 
+
+ :- implement jenkins  workspace linux  cleanup method 
+
+ :- implement  jenkins shared library 
+
+ :- implement  jenkins try catch error  method in our standard pipeline
+
+ :- create multiple jenkins pipeline and multiple  ec2 agents which will be create on demand number  of executer  one per agent make them run on different agent which will  be segregated by the labels \
+
+ :- create multi branch pipeline 
+ :- create a jenkins pipeline to install the docker package in our ec2 inst. if the docker is already exist then uninstall it via pipeline only
+
+ :- create a jenkins pipeline to launch an ec2 inst. and install tomcat and deploy student.war which  should  be build by maven only inside pipeline . 
