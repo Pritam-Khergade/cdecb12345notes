@@ -1,0 +1,26 @@
+
+k8s 
+
+k8s 3 tier architecture 
+impliment k8s cluster backup velero
+create users in k8s cluster 
+host tomcat application in k8s cluster host self hosted database(mariadb)/(postgrase) using statefull set 
+host a sample application of redis in k8s using state full set 
+create s3 frontend with cloudfront impliment (EKS)k8s in banckend (use our tomcat image ) for data base use RDS
+Impliment jenkis in k8s cluster and create our standerd pipeline 
+impliment HPA in k8s 
+create deployment of tomcat using helm chart 
+impliment rolling update strategy in k8s cluster max surge=10 max unavailabel=10
+create deplyoment of tomcat using helm chart ,create network load balancer with same as servicer 
+impliment blue green deployment modle in bakcend name space 
+restore velero backup in same namespace
+restore velero backup in differant namespace
+what is vertical pod scaling and how to impliment it ?
+impliment resource cota on a namespace as well as on the deployment 
+impliment manual scheduling in k8s clusert using node affenity 
+impliment memory and cpu monetoring of k8s cluster using promitheus grafana  
+implimnet liveness and reddyness probe in k8s (explore startup probe in k8s)
+impliment bootstraping of edditional node in k8s (cross region)
+impliment efs as volume in k8s cluster 
+implimnet aws secrate manager for secrate managing in k8s 
+explore hashi corp vault for secrate managment in k8is 
