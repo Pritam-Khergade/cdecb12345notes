@@ -1,0 +1,15 @@
+create docker 3 tier architecture 
+create 2 tier docker architecture use docker compose 
+multi stage docker file stage build artifacts, 2nd stage push s3 ,3rd build tomcat image 
+host a sample application of redis in docker compose  using state full set
+create s3 frontend with cloudfront impliment docker in banckend (use our tomcat image )
+create docker image from running cuntainer 
+create docker image of tomcat which should be less than 300 mb 
+impliment ngix as proxy  in container 
+impliment nginx as load balancer in container
+impliment HA proxy conatainer as load balancer 
+change the port numeber of tamcat conatiner to 80  
+host windows conatainer 1 
+host nginx in windose container 
+host windows nginx container use it as proxy and forword the traffic to linux tomcat 
+mount s3 bucket in conatainer (conatiner ubuntu/amz linux )
